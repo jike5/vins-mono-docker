@@ -37,6 +37,7 @@ sudo ./build_container_cpu.sh
 For the next time, just run below:
 
 ```bash
+sudo ./build_container_vins.sh
 ```
 
 > In vins_ws was modified by container user, you may need to change permission：
@@ -44,5 +45,29 @@ For the next time, just run below:
 > ```bash
 > sudo chmod 777 -R ./*
 > ```
->
-> 
+
+## 4. Euroc Example
+
+First, you should check your Datasets directory in the `build_container_vins.sh`
+
+```bash
+-v [Your Euroc Dataset Path(absolute)]:/Datasets
+```
+
+Run the container:
+
+```bash
+docker exec -it vins bash
+```
+
+> Make sure you have run `build_container_cpu.sh` or `build_container_vins.sh` firstly.
+
+```
+source vins_ws/devel/setup.bash
+roslaunch vins_estimator euroc.launch
+roslaunch vins_estimator vins_rviz.launch
+rosbag play [YOUR_PATH].bag
+```
+
+![image-20221021154559150](${images}/image-20221021154559150.png)
+
