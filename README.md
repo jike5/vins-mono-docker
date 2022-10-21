@@ -69,5 +69,5 @@ roslaunch vins_estimator vins_rviz.launch
 rosbag play [YOUR_PATH].bag
 ```
 
-![image-20221021154559150](${images}/image-20221021154559150.png)
+![image-20221021154559150](images/image-20221021154559150.png)
 
