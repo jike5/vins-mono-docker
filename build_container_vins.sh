@@ -23,4 +23,6 @@ docker run -td --privileged --net=host --ipc=host \
     -v /media/zzx/Samsung_T5/6_dataset:/Datasets \
     -v /etc/group:/etc/group:ro \
     -v `pwd`/vins_ws:/vins_ws \
+    -v `pwd`/vins_vo:/vins_vo \
+    -v `pwd`/output:/output \
     jike5/vins-mono:cpu bash
